@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 import warnings
 import tensorflow.compat.v1 as tf
 from tensorflow.keras.preprocessing import image
