@@ -1,2 +1,6 @@
-/img/*
-/parameter/*
+/img/**
+!/img/**/
+!/img/**/.gitkeep
+/parameter/**
+!/parameter/**/
+!/parameter/**/.gitkeep
