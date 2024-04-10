@@ -42,6 +42,7 @@ def color_checker(cut_region, row, col, cut_size, img_name,):
 def isDistance(a, b, e):
     return abs(a - b) > e
 
+# グレースケールかどうかを判定する
 def isColor(cut_region, cut_size):
     if type(cut_region) is np.ndarray:
         for i in range(cut_size):
@@ -54,23 +55,23 @@ def isColor(cut_region, cut_size):
         
         return False
 
-def remove_one_dot(dataList: list, repetition):
+# 独立したマスを塗りつすための関数
+def remove_one_dot(dataList: list):
     row = len(dataList)
     col = len(dataList[0])
 
-    for rep in range(repetition):
-        for i in range(1, row-1):
-            for j in range(1, col-1):
-                color = [-1, -1, -1]
-                attention_color = dataList[i][j]
-                for move in direction:
-                    if color[dataList[i+move[0]][j+move[1]]] == -1:
-                        color[dataList[i+move[0]][j+move[1]]] = 0
-                    color[dataList[i+move[0]][j+move[1]]] += 1
-                
-                most_appearance_color_index = np.argmax(color)
-                if most_appearance_color_index != attention_color and np.max(color) > 5:
-                    dataList[i][j] = most_appearance_color_index
+    for i in range(1, row-1):
+        for j in range(1, col-1):
+            color = [-1, -1, -1]
+            attention_color = dataList[i][j]
+            for move in direction:
+                if color[dataList[i+move[0]][j+move[1]]] == -1:
+                    color[dataList[i+move[0]][j+move[1]]] = 0
+                color[dataList[i+move[0]][j+move[1]]] += 1
+            
+            most_appearance_color_index = np.argmax(color)
+            if most_appearance_color_index != attention_color and np.max(color) > 5:
+                dataList[i][j] = most_appearance_color_index
     
     result = dataList
     return result

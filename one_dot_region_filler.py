@@ -20,7 +20,7 @@ if __name__ == '__main__':
             predict_color = ilib.color_checker(region_img[y:y+cut_size, x:x+cut_size], i, j, cut_size, 'predict')
             region_list[i][j] = predict_color
     
-    region_list = ilib.remove_one_dot(region_list, 2)
+    region_list = ilib.remove_one_dot(region_list)
 
     for i in range(int(img_height/cut_size)):
         for j in range(int(img_width/cut_size)):
