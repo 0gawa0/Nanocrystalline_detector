@@ -8,7 +8,7 @@ matplotlib 3.8.3
 ocrd-fork-pylsd 0.0.8
 numpy 1.24.3  
 
-※なお、筆者は仮想環境構築のために標準ライブラリであるvenvを用いています。
+※なお、筆者は仮想環境構築のために標準ライブラリであるvenvを用いています。詳しくは[こちら](https://qiita.com/fiftystorm36/items/b2fd47cf32c7694adc2e)。
 
 ## 各ディレクトリ、プログラムファイルの説明
 ### libディレクトリ
